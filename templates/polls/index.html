@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+{% if ultimas_preguntas %}
+    <ul>
+        {% for pregunta in ultimas_preguntas %}
+            <!-- Para hacerlo mas sencillo-->
+            <li><a href="{% url 'polls:detail' pregunta.id %}">{{  pregunta.question_text }}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
+</body>
+</html>
